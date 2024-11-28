@@ -2,6 +2,7 @@ package com.fariasvision.graphQL;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public record Book(
         Integer id,
@@ -15,9 +16,8 @@ public record Book(
             new Book(4, "Abloh-Isms: 6", 233)
     );
 
-    public static Book getBookById(Integer id) {
+    public static Optional<Book> getBookById(Integer id) {
         return books.stream().filter(book -> book.id.equals(id))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 }
