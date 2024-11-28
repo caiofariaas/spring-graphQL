@@ -1,5 +1,6 @@
 type Query{
-    books: [Book]
+    books: [Book]               # Retorna uma lista de livros
+    bookById(id: Int): Book     # Livros por Id
 }
 
 type Book {
